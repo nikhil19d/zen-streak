@@ -7,7 +7,7 @@ import { InteractiveCalendar } from "@/components/interactive-calendar";
 import { useTasks } from "@/hooks/use-tasks";
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarProvider } from "@/components/ui/sidebar";
-import { signOut, useSession } from "next-auth/react";
+import { signOut } from "next-auth/react";
 import { useState, useEffect } from "react";
 import { Flame, Target, TrendingUp, CheckCircle } from "lucide-react";
 import { useRouter } from "next/navigation";
@@ -39,7 +39,7 @@ const Index = () => {
       <div className="min-h-screen flex w-full bg-gradient-subtle">
         <AppSidebar cred={profile} onAddTask={addTask} />
 
-        <div className="flex-1">
+        <div className="cursor-default flex-1">
           {/* Header with Sidebar Trigger */}
           <header className="h-16 flex items-center border-b bg-card/50 backdrop-blur-sm px-6">
             {/* <SidebarTrigger className="mr-4" /> */}
@@ -67,7 +67,7 @@ const Index = () => {
           </header>
 
           <main className="p-6">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+            <div className="cursor-default grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <StatCard
                 title="Current Streak"
                 value={stats.streak}
@@ -105,7 +105,7 @@ const Index = () => {
                   <AddTaskForm onAdd={addTask} />
                 </div>
 
-                <div className="space-y-3">
+                <div className="space-y-3 cursor-default">
                   {tasks.length === 0 ? (
                     <div className="text-center py-12 text-muted-foreground">
                       <Target className="h-12 w-12 mx-auto mb-4 opacity-50" />

@@ -37,7 +37,7 @@ export function AddTaskForm({ onAdd, placeholder = "Add a new task..." }: AddTas
           style={{ backgroundImage: "vat(--color-gradient-zen)" }}
           disabled={!task.trim()}
         >
-          <Plus className="h-4 w-4" />
+          <Plus className="h-4 w-4 cursor-pointer" />
         </Button>
       </form>
     </Card>

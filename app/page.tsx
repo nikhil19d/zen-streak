@@ -22,7 +22,7 @@ export default function Landing() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-subtle flex flex-col">
+    <div className="min-h-screen bg-gradient-subtle flex flex-col cursor-default">
       {/* Header */}
       <header className="border-b bg-card/50 backdrop-blur-sm">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -128,7 +128,7 @@ export default function Landing() {
       {/* Footer */}
       < footer className="border-t bg-card/50 backdrop-blur-sm py-6" >
         <div className="container mx-auto px-4 text-center text-sm text-muted-foreground">
-          <p>Zen Streak Tracker. Find your zen through consistency.</p>
+          <p> Zen Streak Tracker. Find your zen through consistency.</p>
         </div>
       </footer >
     </div >

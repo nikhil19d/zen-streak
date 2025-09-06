@@ -87,7 +87,7 @@ export function AppSidebar({ cred, onAddTask }: AppSidebarProps) {
           {!collapsed && (
             <SidebarGroupContent>
               <Card>
-                <CardContent className="p-4">
+                <CardContent className="cursor-default p-4">
                   <div className="flex items-center gap-3">
                     <Avatar className="h-10 w-10">
                       <AvatarImage src={cred.img} />
@@ -121,15 +121,15 @@ export function AppSidebar({ cred, onAddTask }: AppSidebarProps) {
               {/* Quick Add Card */}
               <Card>
                 <CardHeader className="pb-3">
-                  <CardTitle className="text-base flex items-center gap-2">
-                    <Plus className="h-4 w-4" />
+                  <CardTitle className="text-base flex items-center cursor-default gap-2">
+                    <Plus className="h-4 w-4 cursor-pointer" />
                     Quick Add
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
                   {/* {hasReachedMinimum ? ( */}
                   <div className="space-y-3">
-                    <div className="text-sm text-success font-medium">
+                    <div className="text-sm text-success font-medium cursor-default">
                       ✅ Minimum tasks reached!
                     </div>
                     <AddTaskForm onAdd={onAddTask} placeholder="Add bonus task..." />
@@ -164,12 +164,12 @@ export function AppSidebar({ cred, onAddTask }: AppSidebarProps) {
                   >
                     {theme === "dark" ? (
                       <>
-                        <Sun className="h-4 w-4" />
+                        <Sun className="h-4 w-4 cursor-default" />
                         Switch to Light Mode
                       </>
                     ) : (
                       <>
-                        <Moon className="h-4 w-4" />
+                        <Moon className="h-4 w-4 cursor-default" />
                         Switch to Dark Mode
                       </>
                     )}
