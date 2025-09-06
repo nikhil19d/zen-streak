@@ -103,7 +103,7 @@ export default function Landing() {
                   Start your journey towards mindful productivity
                 </CardDescription>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 cursor-pointer">
                 <Button onClick={() =>
                   signIn(undefined, { callbackUrl: "/dashboard" })
 
