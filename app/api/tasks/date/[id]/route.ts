@@ -4,6 +4,14 @@ import { withErroHandler } from "@/lib/handler";
 import { requireAuth } from "@/lib/requireAuth";
 import { NextRequest, NextResponse } from "next/server";
 
+interface Tasks {
+  id: string,
+  userId: string,
+  task: string,
+  createdAt: Date,
+  completed: boolean
+}
+
 export const GET = withErroHandler(async (_req: NextRequest, { params }: { params: Promise<{ id: string }> }) => {
   const session = await requireAuth(authOptions)
   const allTasks = await prisma.tasks.findMany({
@@ -12,7 +20,7 @@ export const GET = withErroHandler(async (_req: NextRequest, { params }: { param
     }
   })
   const { id } = await params
-  const tasks = allTasks.filter(task => task.createdAt.toLocaleDateString().replaceAll('/', '-') == id)
+  const tasks: Tasks[] = allTasks.filter(task => task.createdAt.toLocaleDateString().replaceAll('/', '-') == id)
   return NextResponse.json(
     tasks
     , {
