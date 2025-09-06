@@ -4,7 +4,7 @@ import { withErroHandler } from "@/lib/handler";
 import { requireAuth } from "@/lib/requireAuth";
 import { NextRequest, NextResponse } from "next/server";
 
-interface Tasks {
+interface Task {
   id: string,
   userId: string,
   task: string,
@@ -20,7 +20,7 @@ export const GET = withErroHandler(async (_req: NextRequest, { params }: { param
     }
   })
   const { id } = await params
-  const tasks: Tasks[] = allTasks.filter(task => task.createdAt.toLocaleDateString().replaceAll('/', '-') == id)
+  const tasks: Task[] = allTasks.filter((task: Task) => task.createdAt.toLocaleDateString().replaceAll('/', '-') == id)
   return NextResponse.json(
     tasks
     , {
