@@ -11,7 +11,8 @@ FROM node:18-alpine AS builder
 RUN npm install -g pnpm@latest
 WORKDIR /work/project
 COPY package* pnpm-lock.yaml ./
-RUN pnpm install --frozen-lockfile
+COPY prisma ./prisma
+RUN pnpm install --frozen-lockfile && pnpm approve-builds --yes
 COPY . .
 ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL

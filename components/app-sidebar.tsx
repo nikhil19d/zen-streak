@@ -127,11 +127,7 @@ export function AppSidebar({ cred, onAddTask }: AppSidebarProps) {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  {/* {hasReachedMinimum ? ( */}
                   <div className="space-y-3">
-                    <div className="text-sm text-success font-medium cursor-default">
-                      ✅ Minimum tasks reached!
-                    </div>
                     <AddTaskForm onAdd={onAddTask} placeholder="Add bonus task..." />
                   </div>
                 </CardContent>
