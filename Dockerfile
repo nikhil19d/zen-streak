@@ -15,6 +15,8 @@ RUN pnpm install --frozen-lockfile
 COPY . .
 ARG DATABASE_URL
 ENV DATABASE_URL=$DATABASE_URL
+ARG DIRECT_URL
+ENV DIRECT_URL=$DIRECT_URL
 RUN pnpm prisma generate && pnpm run build
 
 
@@ -27,4 +29,3 @@ COPY --from=builder /work/project/package.json ./package.json
 COPY --from=builder /work/project/prisma ./prisma
 EXPOSE 3000
 CMD [ "sh","-c","pnpm prisma migrate deploy && pnpm run start" ]
-# CMD ["pnpm","prisma","migrate","deploy","&&","pnpm","run","start" ]
